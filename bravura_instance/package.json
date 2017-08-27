@@ -1,0 +1,14 @@
+{
+  "name": "bravura_instance",
+  "version": "1.0.0",
+  "description": "mock for bravura instance",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mateusz Wilk",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.4"
+  }
+}
