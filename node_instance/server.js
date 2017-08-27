@@ -2,8 +2,9 @@
 let express = require('express');
 let app = express();
 
-// require app routes
-require('./routes')(app);
+app.get('/gettime', (req, res) => {
+  res.json({time: new Date()});
+});
 
 // catch 404
 app.use((req, res, next) => {
@@ -20,5 +21,5 @@ app.use((err, req, res, next) => {
 });
 
 // start the server on port 3000
-let port = process.env.PORT || 3000;
+let port = process.env.PORT || 4000;
 app.listen(port, () => { console.log(`Listening on port ${port}`); });
