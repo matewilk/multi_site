@@ -7,7 +7,7 @@ let routes = (app) => {
 
   app.get('/start', (req, res, next) => {
     let options = {
-      url: 'http://127.0.0.1:4000/gettime'
+      url: 'http://node:4000/gettime'
     };
 
     let callback = (err, response, body) => {

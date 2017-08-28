@@ -1,5 +1,5 @@
 {
-  "name": "node_instance",
+  "name": "node",
   "version": "1.0.0",
   "description": "mocked test node instance",
   "main": "server.js",

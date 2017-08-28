@@ -1,5 +1,5 @@
 {
-  "name": "bravura_instance",
+  "name": "bravura",
   "version": "1.0.0",
   "description": "mock for bravura instance",
   "main": "server.js",
