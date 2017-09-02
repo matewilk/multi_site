@@ -20,6 +20,11 @@ app.use(session({
   }
 }));
 
+/**
+ * Routes
+ */
+require('./router')(app);
+
 // set static path
 app.use(express.static('client/public'));
 // enable html5 mode
