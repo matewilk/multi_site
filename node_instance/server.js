@@ -20,6 +20,6 @@ app.use((err, req, res, next) => {
     });
 });
 
-// start the server on port 3000
-let port = process.env.PORT || 4000;
-app.listen(port, () => { console.log(`Listening on port ${port}`); });
+// start the server on port 5000
+let port = process.env.PORT || 5000;
+app.listen(port, () => { console.log(`node instance listening on port ${port}`); });

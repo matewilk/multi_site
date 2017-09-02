@@ -1,0 +1,25 @@
+version: '2'
+
+services:
+  bravura:
+    container_name: bravura
+    build: ./bravura_instance
+    ports:
+      - "5858:5858"
+      - "4000:4000"
+    networks:
+      - user_defined
+
+  node:
+    container_name: node
+    build: ./node_instance
+    ports:
+      - "5850:5850"
+      - "5000:5000"
+    networks:
+      - user_defined
+
+
+networks:
+  user_defined:
+    driver: bridge
