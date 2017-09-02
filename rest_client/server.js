@@ -27,7 +27,7 @@ app.all('/*', function (req, res) {
   res.sendFile(path.join(__dirname, 'client/public/index.html'));
 });
 
-app.set('port', process.env.PORT || 3001);
+app.set('port', process.env.PORT || 3000);
 
 server.listen(app.get('port'), () => {
   console.log(`Listening on ${app.get('port')}`);

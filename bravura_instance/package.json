@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "dev": "node server.js",
-    "debug": "node --inspect=5858 server.js"
+    "debug": "node --inspect=5840 server.js"
   },
   "author": "Mateusz Wilk",
   "license": "ISC",

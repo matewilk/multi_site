@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "node server.js",
-    "debug" : "node --inspect=5851 server.js"
+    "debug" : "node --inspect=5858 server.js"
   },
   "author": "Mateusz Wilk",
   "license": "ISC",
