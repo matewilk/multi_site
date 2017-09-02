@@ -7,7 +7,6 @@ const app = express();
 const server = require('http').createServer(app);
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
 
 app.use(session({
   name: 'test.sess',

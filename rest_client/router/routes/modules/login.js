@@ -1,7 +1,7 @@
 const login = {
     'post': (req, res) => {
-        if(req.body.password.value === 'pass') {
-            req.session.user = req.body.email.value;
+        if(req.body.password === 'pass') {
+            req.session.user = req.body.email;
             res.send(true);
         } else {
             res.send(false);
