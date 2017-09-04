@@ -1,6 +1,10 @@
 // Require express and create an instance on the app
-let express = require('express');
-let app = express();
+const express = require('express');
+const bodyParser = require('body-parser');
+
+const app = express();
+
+app.use(bodyParser.json());
 
 // require app routes
 require('./routes')(app);

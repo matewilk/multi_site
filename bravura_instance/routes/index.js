@@ -1,13 +1,14 @@
-let request = require('request');
+const request = require('request');
 
-let routes = (app) => {
+const routes = (app) => {
   app.get('/', (req, res) => {
-    res.send('Hello World');
+    res.send(`I'm up and running on port ${req.app.settings.port}`);
   });
 
-  app.get('/start', (req, res, next) => {
+  app.post('/api/requestnode', (req, res, next) => {
+    let nodeNo = req.body.node;
     let options = {
-      url: 'http://node:5001/gettime'
+      url: `http://node${nodeNo}:500${nodeNo}/gettime`
     };
 
     let callback = (err, response, body) => {
