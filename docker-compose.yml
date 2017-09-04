@@ -10,7 +10,7 @@ services:
     networks:
       - client
       - bravura1
-      - bravura2
+      # - bravura2
 
   bravura1:
     container_name: bravura1
@@ -31,42 +31,42 @@ services:
     networks:
       - bravura1
 
-  node2:
-    container_name: node2
-    build: ./node_instance
-    ports:
-      - "5852:5850"
-      - "5002:5000"
-    networks:
-      - bravura1
-
-  bravura2:
-    container_name: bravura2
-    build: ./bravura_instance
-    ports:
-      - "5842:5840"
-      - "4002:4000"
-    networks:
-      - client
-      - bravura2
-
-  node3:
-    container_name: node3
-    build: ./node_instance
-    ports:
-      - "5853:5850"
-      - "5003:5000"
-    networks:
-      - bravura2
-
-  node4:
-    container_name: node4
-    build: ./node_instance
-    ports:
-      - "5854:5850"
-      - "5004:5000"
-    networks:
-      - bravura2
+  # node2:
+  #   container_name: node2
+  #   build: ./node_instance
+  #   ports:
+  #     - "5852:5850"
+  #     - "5002:5000"
+  #   networks:
+  #     - bravura1
+  #
+  # bravura2:
+  #   container_name: bravura2
+  #   build: ./bravura_instance
+  #   ports:
+  #     - "5842:5840"
+  #     - "4002:4000"
+  #   networks:
+  #     - client
+  #     - bravura2
+  #
+  # node3:
+  #   container_name: node3
+  #   build: ./node_instance
+  #   ports:
+  #     - "5853:5850"
+  #     - "5003:5000"
+  #   networks:
+  #     - bravura2
+  #
+  # node4:
+  #   container_name: node4
+  #   build: ./node_instance
+  #   ports:
+  #     - "5854:5850"
+  #     - "5004:5000"
+  #   networks:
+  #     - bravura2
 
 
 networks:
@@ -74,5 +74,5 @@ networks:
     driver: bridge
   bravura1:
     driver: bridge
-  bravura2:
-    driver: bridge
+  # bravura2:
+  #   driver: bridge

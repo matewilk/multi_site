@@ -6,7 +6,7 @@ const node = {
     let nodeNo = req.param('node');
 
     let options = {
-      url: `http://client:400${serverNo}/api/requestnode`,
+      url: `http://bravura${serverNo}:4000/api/requestnode`,
       json: {nodeNo: nodeNo}
     };
 

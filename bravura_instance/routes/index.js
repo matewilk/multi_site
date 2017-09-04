@@ -6,9 +6,9 @@ const routes = (app) => {
   });
 
   app.post('/api/requestnode', (req, res, next) => {
-    let nodeNo = req.body.node;
+    let nodeNo = req.body.nodeNo;
     let options = {
-      url: `http://node${nodeNo}:500${nodeNo}/gettime`
+      url: `http://node${nodeNo}:5000/gettime`
     };
 
     let callback = (err, response, body) => {

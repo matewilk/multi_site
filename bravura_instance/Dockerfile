@@ -9,6 +9,4 @@ RUN npm install
 # Bundle app source
 COPY . .
 
-EXPOSE 5841
-EXPOSE 4001
 CMD [ "npm", "run", "debug" ]
