@@ -21,6 +21,9 @@ services:
     ports:
       - "5841:5840"
       - "4001:4000"
+    volumes:
+      - "./bravura_instance:/usr/src/app"
+      - "/usr/src/app/node_modules"
     networks:
       - client
       - bravura1
@@ -31,6 +34,9 @@ services:
     ports:
       - "5851:5850"
       - "5001:5000"
+    volumes:
+      - "./node_instance:/usr/src/app"
+      - "/usr/src/app/node_modules"
     networks:
       - bravura1
 

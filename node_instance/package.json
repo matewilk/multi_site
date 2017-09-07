@@ -5,11 +5,14 @@
   "main": "server.js",
   "scripts": {
     "dev": "node server.js",
-    "debug": "node --inspect=5850 server.js"
+    "debug": "nodemon --inspect=5850 server.js"
   },
   "author": "Mateusz Wilk",
   "license": "ISC",
   "dependencies": {
     "express": "^4.15.4"
+  },
+  "devDependencies": {
+    "nodemon": "^1.12.0"
   }
 }
