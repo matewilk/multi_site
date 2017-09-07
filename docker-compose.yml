@@ -8,7 +8,8 @@ services:
       - "5858:5858"
       - "3000:3000"
     volumes:
-      - .:/rest_client/usr/src/app
+      - "./rest_client:/usr/src/app"
+      - "/usr/src/app/node_modules"
     networks:
       - client
       - bravura1
