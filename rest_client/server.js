@@ -1,5 +1,6 @@
 const express = require('express'),
   session = require('express-session'),
+  MongoStore = require('connect-mongo')(session),
   bodyParser = require('body-parser'),
   path = require('path');
 
@@ -13,6 +14,9 @@ app.use(session({
   secret: 'verysecretkey',
   resave: false,
   saveUninitialized: false,
+  store: new MongoStore({
+    url: 'mongodb://mongodb:27017/session'
+  }),
   cookie: {
     httpOnly: true,
     maxAge: 60 * 60 * 1000 // 1 hour
