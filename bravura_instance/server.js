@@ -1,10 +1,26 @@
 // Require express and create an instance on the app
 const express = require('express');
+const session = require('express-session');
+const MongoStore = require('connect-mongo')(session);
 const bodyParser = require('body-parser');
 
 const app = express();
 
 app.use(bodyParser.json());
+
+app.use(session({
+  name: 'test.sess',
+  secret: 'verysecretkey',
+  resave: false,
+  saveUninitialized: false,
+  store: new MongoStore({
+    url: 'mongodb://mongodb:27017/session'
+  }),
+  cookie: {
+    httpOnly: true,
+    maxAge: 60 * 60 * 1000 // 1 hour
+  }
+}));
 
 // require app routes
 require('./routes')(app);

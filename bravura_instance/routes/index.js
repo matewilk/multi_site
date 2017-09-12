@@ -5,6 +5,14 @@ const routes = (app) => {
     res.send(`I'm up and running on port ${req.app.settings.port}`);
   });
 
+  app.get('/api/session', (req, res) => {
+    if (req.session.user) {
+      res.send({authenticated: true});
+    } else {
+      res.send({authenticated: false});
+    }
+  });
+
   app.post('/api/requestnode', (req, res, next) => {
     let nodeNo = req.body.nodeNo;
     let options = {
