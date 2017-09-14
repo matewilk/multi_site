@@ -14,9 +14,9 @@ app.use(session({
   secret: 'verysecretkey',
   resave: false,
   saveUninitialized: false,
-  store: new MongoStore({
-    url: 'mongodb://mongodb:27017/session'
-  }),
+  // store: new MongoStore({
+  //   url: 'mongodb://mongodb:27017/session'
+  // }),
   cookie: {
     httpOnly: true,
     maxAge: 60 * 60 * 1000 // 1 hour
