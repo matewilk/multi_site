@@ -9,6 +9,7 @@ RUN npm install
 # Bundle app source
 COPY . .
 
+EXPOSE 8080
 EXPOSE 5858
 EXPOSE 3000
 

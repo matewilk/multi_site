@@ -14,7 +14,7 @@ app.use(session({
   resave: false,
   saveUninitialized: false,
   store: new MongoStore({
-    url: 'mongodb://mongodb:27017/session'
+    url: 'mongodb://mongodb:27017/session' // mongodb is the name of the docker container
   }),
   cookie: {
     httpOnly: true,

@@ -42,6 +42,7 @@ let config = {
   devServer: {
     hot: true,
     contentBase: './client/public',
+    host: '0.0.0.0',
     proxy: {
       '*': 'http://localhost:3000'
     }

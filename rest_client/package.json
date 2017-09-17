@@ -5,8 +5,9 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack-dev-server --progress --colors",
-    "debug": "nodemon --inspect=5858 -L server.js",
+    "client": "webpack-dev-server --progress --colors",
+    "server": "nodemon --inspect=5858 -L server.js",
+    "debug": "npm run server & npm run client",
     "build": "webpack --config webpack.prod.config.js"
   },
   "author": "Mateusz Wilk",
