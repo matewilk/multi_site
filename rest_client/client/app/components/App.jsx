@@ -81,14 +81,14 @@ class LoginForm extends React.Component {
           <Col xs={6}>
             <RaisedButton
               label='Logout'
-              onTouchTap={this.logout}
+              onClick={this.logout}
               disabled={!this.state.signedIn}
             />
           </Col>
           <Col xs={6}>
             <RaisedButton
               label='Login'
-              onTouchTap={this.login}
+              onClick={this.login}
               disabled={this.state.signedIn}
             />
           </Col>

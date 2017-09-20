@@ -5,10 +5,6 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 import App from './components/App';
 
-// Needed for onTouchTap
-import injectTapEventPlugin from 'react-tap-event-plugin';
-injectTapEventPlugin();
-
 ReactDOM.render(
   <MuiThemeProvider>
     <App />
