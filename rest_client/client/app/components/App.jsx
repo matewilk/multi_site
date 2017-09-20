@@ -11,7 +11,9 @@ class LoginForm extends React.Component {
       form: {
         email: '',
         password: ''
-      }
+      },
+      signedIn: false,
+      isFetching: false
     };
 
     this.onValueChange = this.onValueChange.bind(this);
@@ -19,12 +21,36 @@ class LoginForm extends React.Component {
     this.logout = this.logout.bind(this);
   }
 
-  login (event) {
+  sendRequest (type, body) {
+    this.setState({isFetching: true});
 
+    fetch(
+      '/api/login',
+      {
+        method: type,
+        credentials: 'include',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: body
+      }
+    ).then((response) => {
+      if (response.ok) {
+        response.json().then((data) => {
+          this.setState({signedIn: data.authenticated, isFetching: false});
+        });
+      }
+    }).catch((err) => {
+      console.log('Request Failed', err);
+    });
   }
 
-  logout (event) {
+  login () {
+    this.sendRequest('POST', JSON.stringify(this.state.form));
+  }
 
+  logout () {
+    this.sendRequest('DELETE', '');
   }
 
   onValueChange (event, value) {
@@ -56,12 +82,14 @@ class LoginForm extends React.Component {
             <RaisedButton
               label='Logout'
               onTouchTap={this.logout}
+              disabled={!this.state.signedIn}
             />
           </Col>
           <Col xs={6}>
             <RaisedButton
               label='Login'
               onTouchTap={this.login}
+              disabled={this.state.signedIn}
             />
           </Col>
         </Row>

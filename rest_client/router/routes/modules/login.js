@@ -1,10 +1,13 @@
 const login = {
   'post': (req, res) => {
     if (req.body.password === 'pass') {
+      // have to set headers when using node session with fetch API
+      res.setHeader('Access-Control-Allow-Credentials', 'true');
+
       req.session.user = req.body.email;
-      res.send(true);
+      res.json({authenticated: true});
     } else {
-      res.send(false);
+      res.send({authenticated: false});
     }
   },
   'delete': (req, res) => {
